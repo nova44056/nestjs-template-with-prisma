@@ -1,34 +1,21 @@
 #!/bin/bash
 
-# Define an array of package names
-packages=(
-  "@prisma/client",
-  "class-transformer",
-  "class-validator",
-  "@nestjs/cli",
-  "@nestjs/config",
-  "jsonwebtoken",
-  "chance",
-  "nodemailer",
-  "prisma",
-)
+# dependencies
+yarn add @prisma/client
+yarn add class-transformer
+yarn add class-validator
+yarn add @nestjs/cli
+yarn add @nestjs/config
+yarn add jsonwebtoken
+yarn add chance
+yarn add nodemailer
+yarn add prisma
 
-# Loop through the array and run the yarn add command for each package
-for package in "${packages[@]}"
-do
-  yarn add "$package"
-done
+# dev dependencies
+yarn add -D @types/chance
+yarn add -D @types/jsonwebtoken
+yarn add -D @types/nodemailer
+yarn add -D dotenv-cli
+yarn add -D pactum
 
-dev_package=(
-  "@types/chance",
-  "@types/jsonwebtoken",
-  "@types/nodemailer",
-  "dotenv-cli",
-  "pactum"
-)
-
-# Loop through the array and run the yarn add command for each dev_package
-for package in "${dev_package[@]}"
-do
-  yarn add "$dev_package"
-done
+npx prisma init
